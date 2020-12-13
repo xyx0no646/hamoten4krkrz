@@ -482,6 +482,9 @@ class AnimationLayer extends KAGLayer
 		dm(elm.storage);
 		dm(elm.key);
 
+		Debug.message("elm.storage:" + elm.storage);
+		Debug.message("elm.key:" + elm.key);
+
 		// 画像を読み込む
 		var taginfo = super.loadImages(elm.storage, elm.key);
 

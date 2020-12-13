@@ -51,16 +51,16 @@ if (!MBSystemPref.debugMode) {
 
 
 // 背景画像, 部品画像, 立ち絵
-addPathToMBPath('images', 'data/graph');
+addPathToMBPath('images', 'graph');
 
 // イベント画像
-addPathToMBPath('events', 'data/pict');
+addPathToMBPath('events', 'pict');
 
 // 音声
-addPathToMBPath('sounds', 'data/audio');
+addPathToMBPath('sounds', 'audio');
 
 // 動画
-addPathToMBPath('movies', 'data/movie');
+addPathToMBPath('movies', 'movie');
 
 delete addPathToMBPath;
 
