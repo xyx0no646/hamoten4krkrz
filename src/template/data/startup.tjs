@@ -1,108 +1,29 @@
 // startup.tjs - スタートアップスクリプト
 // Copyright (C) 2001, W.Dee  改変・配布は自由です
 
-var dataPath = '/data/';
-Storages.addAutoPath(System.exePath + dataPath);
-Storages.addAutoPath(System.exePath + dataPath + '_preferences/');
-Storages.addAutoPath(System.exePath + dataPath + 'audio/');
-Storages.addAutoPath(System.exePath + dataPath + 'graph/');
-Storages.addAutoPath(System.exePath + dataPath + 'graph/bgimage/');
-Storages.addAutoPath(System.exePath + dataPath + 'graph/fgimage/');
-Storages.addAutoPath(System.exePath + dataPath + 'graph/fgimage/erin/');
-Storages.addAutoPath(System.exePath + dataPath + 'graph/fgimage/margot/');
-
-Storages.addAutoPath(System.exePath + dataPath + 'graph/image/');
-Storages.addAutoPath(System.exePath + dataPath + 'graph/image/bookmark/');
-Storages.addAutoPath(System.exePath + dataPath + 'graph/image/extra/');
-Storages.addAutoPath(System.exePath + dataPath + 'graph/image/extra/cgview/');
-Storages.addAutoPath(System.exePath + dataPath + 'graph/image/extra/cgview/thumbnails/');
-Storages.addAutoPath(System.exePath + dataPath + 'graph/image/history/');
-Storages.addAutoPath(System.exePath + dataPath + 'graph/image/title/');
-Storages.addAutoPath(System.exePath + dataPath + 'graph/image/userconf/');
-Storages.addAutoPath(System.exePath + dataPath + 'graph/rule/');
-
-Storages.addAutoPath(System.exePath + dataPath + 'movie/');
-Storages.addAutoPath(System.exePath + dataPath + 'pict/');
-Storages.addAutoPath(System.exePath + dataPath + 'scenario/');
-Storages.addAutoPath(System.exePath + dataPath + 'scenario/content/');
-Storages.addAutoPath(System.exePath + dataPath + 'scenario/direction/');
-//Storages.addAutoPath(System.exePath + dataPath + 'scenario/direction/chapter1/');
-//Storages.addAutoPath(System.exePath + dataPath + 'scenario/direction/ending/');
-Storages.addAutoPath(System.exePath + dataPath + 'scenario/direction/');
-Storages.addAutoPath(System.exePath + dataPath + 'scenario/kagPlugins/');
-Storages.addAutoPath(System.exePath + dataPath + 'scenario/kagRoutines/');
-
-Storages.addAutoPath(System.exePath + dataPath + 'system/');
-Storages.addAutoPath(System.exePath + dataPath + 'system_mb/');
-Storages.addAutoPath(System.exePath + dataPath + 'system_mb/functions/');
-Storages.addAutoPath(System.exePath + dataPath + 'system_mb/init/');
-Storages.addAutoPath(System.exePath + dataPath + 'system_mb/init/kaghack/');
-Storages.addAutoPath(System.exePath + dataPath + 'system_mb/mb/');
-Storages.addAutoPath(System.exePath + dataPath + 'system_mb/mb/graphic/');
-Storages.addAutoPath(System.exePath + dataPath + 'system_mb/mb/system/');
-Storages.addAutoPath(System.exePath + dataPath + 'system_mb/mb/system/cmenu/');
-Storages.addAutoPath(System.exePath + dataPath + 'system_mb/mb/system/history/');
-Storages.addAutoPath(System.exePath + dataPath + 'system_mb/mb/system/bookmark/');
-Storages.addAutoPath(System.exePath + dataPath + 'system_mb/mb/system/userconf/');
-
-Storages.addAutoPath(System.exePath + dataPath + 'system_mb/ui/');
-Storages.addAutoPath(System.exePath + dataPath + 'sysxmod_novel/');
-Storages.addAutoPath(System.exePath + dataPath + 'sysxmod_novel/functions/');
-Storages.addAutoPath(System.exePath + dataPath + 'sysxmod_novel/init/');
-Storages.addAutoPath(System.exePath + dataPath + 'sysxmod_novel/init/kaghack/');
-Storages.addAutoPath(System.exePath + dataPath + 'sysxmod_novel/mod/ui/');
-Storages.addAutoPath(System.exePath + dataPath + 'sysxmod_novel/mod/system/');
-Storages.addAutoPath(System.exePath + dataPath + 'sysxmod_novel/mod/system/bookmark/');
-Storages.addAutoPath(System.exePath + dataPath + 'sysxmod_novel/mod/system/cmenu/');
-Storages.addAutoPath(System.exePath + dataPath + 'sysxmod_novel/mod/system/userconf/');
-
-
+// 吉里吉里Zの場合は細工する
 property _dummyProp { getter {} setter (v) {} }
 with(Window) {
     &.innerSunken    = &_dummyProp;
     &.showScrollBars = &_dummyProp;
 }
-
 Plugins.link("plugin/menu.dll");       // メニューを使わないなら不要
 Plugins.link("plugin/KAGParser.dll");  // KAGを使わない(!)なら不要
+
+var dataPath = '/data/';
+Storages.addAutoPath(System.exePath + dataPath);
+Storages.addAutoPath(System.exePath + dataPath + "/system/");
 
 // Load MenuItem stub
 if (typeof(global.MenuItem) !== "Object")
 {
-    class MenuItem
-    {
-        var caption;
-        var checked;
-        var enabled;
-        var group;
-        var radio;
-        var shortcut;
-        var visible;
-        var parent;
-        var children;
-        var root;
-        var window;
-        var index;
-        function MenuItem() {
-            children = [];
-        }
-        function finalize() {}
-        function add() {}
-        function insert() {}
-        function remove() {}
-        function popup() {}
-        function onClick() {}
-        function fireClick() {}
-    }
-
-    global.Window.menu = new MenuItem();
+	Scripts.execStorage("MenuItem_stub.tjs");
 }
 // Load font and set it as default
 if (typeof(global.Font) === "Object" && typeof(global.Font.addFont) === "Object")
 {
-	System.setArgument("-deffont", global.Font.addFont("font.otf")[0]);
+	System.setArgument("-deffont", global.Font.addFont("ipag.ttf")[0]);
 }
-
 
 // このスクリプトは一番最初に実行されるスクリプトです
 Scripts.execStorage("system/Initialize.tjs"); // system/Initialize.tjs を実行
