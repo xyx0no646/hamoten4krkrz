@@ -76,12 +76,12 @@ if(Storages.isExistentStorage("Config.~new"))
 	}
 
 	// Pad の表示
-	global.configPad = new Pad();
-	global.configPad.text = lines;
-	global.configPad.color = 0;
-	global.configPad.title = "Config.tjs";
-	global.configPad.fileName = Storages.getLocalName(Storages.getPlacedPath("Config.tjs"));
-	global.configPad.visible = true;
+//	global.configPad = new Pad();
+//	global.configPad.text = lines;
+//	global.configPad.color = 0;
+//	global.configPad.title = "Config.tjs";
+//	global.configPad.fileName = Storages.getLocalName(Storages.getPlacedPath("Config.tjs"));
+//	global.configPad.visible = true;
 
 	// 通知
 	System.inform("設定内容を古い Config.tjs から引き継ぎました。\n"
