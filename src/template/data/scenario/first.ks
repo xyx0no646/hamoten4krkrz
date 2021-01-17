@@ -6,8 +6,8 @@
 *start
 
 ; 吉里吉里プラグインを組み込む
-[loadplugin module="extrans.dll"]
-[loadplugin module="wuvorbis.dll"]
+[loadplugin module="plugin/extrans.dll"]
+[loadplugin module="plugin/wuvorbis.dll"]
 
 ; KAGプラグイン
 [call storage="autoInsertLabel.ks"]

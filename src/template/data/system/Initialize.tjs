@@ -53,7 +53,7 @@ function useArchiveIfExists(name)
 		Storages.addAutoPath(arcname + ">");
 }
 
-Storages.addAutoPath(System.exePath + "video/"); // exePath 以下の video/
+Storages.addAutoPath(System.exePath + "data/"); // exePath 以下の data/
 Storages.addAutoPath("video/"); // video フォルダ
 Storages.addAutoPath("others/"); // その他
 Storages.addAutoPath("rule/"); // ルール画像フォルダ
@@ -64,6 +64,38 @@ Storages.addAutoPath("bgimage/"); // 背景画像フォルダ
 Storages.addAutoPath("scenario/"); // シナリオフォルダ
 Storages.addAutoPath("image/"); // そのほかの画像フォルダ
 Storages.addAutoPath("system/"); // システムフォルダ
+
+/*
+Storages.addAutoPath(System.exePath +"data/video/"); // video フォルダ
+Storages.addAutoPath(System.exePath +"data/others/"); // その他
+Storages.addAutoPath(System.exePath +"data/rule/"); // ルール画像フォルダ
+Storages.addAutoPath(System.exePath +"data/sound/"); // 効果音フォルダ
+Storages.addAutoPath(System.exePath +"data/bgm/"); // BGM フォルダ
+Storages.addAutoPath(System.exePath +"data/fgimage/"); // 前景画像フォルダ
+Storages.addAutoPath(System.exePath +"data/bgimage/"); // 背景画像フォルダ
+Storages.addAutoPath(System.exePath +"data/scenario/"); // シナリオフォルダ
+Storages.addAutoPath(System.exePath +"data/graph/bgimage/"); // そのほかの画像フォルダ
+Storages.addAutoPath(System.exePath +"data/graph/fgimage/"); // そのほかの画像フォルダ
+Storages.addAutoPath(System.exePath +"data/graph/image/"); // そのほかの画像フォルダ
+Storages.addAutoPath(System.exePath +"data/graph/rule/"); // そのほかの画像フォルダ
+Storages.addAutoPath(System.exePath +"data/image/"); // そのほかの画像フォルダ
+Storages.addAutoPath(System.exePath +"data/system/"); // システムフォルダ
+*/
+
+Storages.addAutoPath(System.exePath +"video/"); // video フォルダ
+Storages.addAutoPath(System.exePath +"others/"); // その他
+Storages.addAutoPath(System.exePath +"rule/"); // ルール画像フォルダ
+Storages.addAutoPath(System.exePath +"sound/"); // 効果音フォルダ
+Storages.addAutoPath(System.exePath +"bgm/"); // BGM フォルダ
+Storages.addAutoPath(System.exePath +"fgimage/"); // 前景画像フォルダ
+Storages.addAutoPath(System.exePath +"bgimage/"); // 背景画像フォルダ
+Storages.addAutoPath(System.exePath +"scenario/"); // シナリオフォルダ
+Storages.addAutoPath(System.exePath +"graph/bgimage/"); // そのほかの画像フォルダ
+Storages.addAutoPath(System.exePath +"graph/fgimage/"); // そのほかの画像フォルダ
+Storages.addAutoPath(System.exePath +"graph/image/"); // そのほかの画像フォルダ
+Storages.addAutoPath(System.exePath +"graph/rule/"); // そのほかの画像フォルダ
+Storages.addAutoPath(System.exePath +"image/"); // そのほかの画像フォルダ
+Storages.addAutoPath(System.exePath +"system/"); // システムフォルダ
 
 // パッチアーカイブの検索と使用
 // もしこれらの名前を持ったアーカイブが実行可能ファイルと

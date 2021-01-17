@@ -1,6 +1,10 @@
 // startup.tjs - スタートアップスクリプト
 // Copyright (C) 2001, W.Dee  改変・配布は自由です
 
+var dataPath = '/data/';
+Storages.addAutoPath(System.exePath + dataPath);
+Storages.addAutoPath(System.exePath + dataPath + "/system/");
+
 // 吉里吉里Zの場合は細工する
 property _dummyProp { getter {} setter (v) {} }
 with(Window) {
@@ -9,10 +13,6 @@ with(Window) {
 }
 Plugins.link("plugin/menu.dll");       // メニューを使わないなら不要
 Plugins.link("plugin/KAGParser.dll");  // KAGを使わない(!)なら不要
-
-var dataPath = '/data/';
-Storages.addAutoPath(System.exePath + dataPath);
-Storages.addAutoPath(System.exePath + dataPath + "/system/");
 
 // Load MenuItem stub
 if (typeof(global.MenuItem) !== "Object")

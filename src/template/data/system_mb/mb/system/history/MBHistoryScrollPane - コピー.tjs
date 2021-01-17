@@ -5,15 +5,15 @@
 
 class MBHistoryScrollPane extends MBComponentLayer
 {
-	var objSlideBar;	// ƒXƒ‰ƒCƒhƒo[
-	var objSlidePeg;	// ‚Â‚Ü‚Ý
+	var objSlideBar;	// ã‚¹ãƒ©ã‚¤ãƒ‰ãƒãƒ¼
+	var objSlidePeg;	// ã¤ã¾ã¿
 	
-	var intMaxPegTop = 300;	// ‚Â‚Ü‚Ý‚ÌÅ‘åˆÊ’u
+	var intMaxPegTop = 300;	// ã¤ã¾ã¿ã®æœ€å¤§ä½ç½®
 	
 	
 	function MBHistoryScrollPane(win, par)
 	{
-		// ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+		// ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 		
 		super.MBComponentLayer(win, par);
 		
@@ -22,7 +22,7 @@ class MBHistoryScrollPane extends MBComponentLayer
 	
 	function finalize()
 	{
-		// ƒtƒ@ƒCƒiƒ‰ƒCƒU
+		// ãƒ•ã‚¡ã‚¤ãƒŠãƒ©ã‚¤ã‚¶
 		
 		invalidate objSlideBar if (objSlideBar !== void);
 		invalidate objSlidePeg if (objSlidePeg !== void);
@@ -34,7 +34,7 @@ class MBHistoryScrollPane extends MBComponentLayer
 	
 	function init()
 	{
-		// ƒCƒjƒVƒƒƒ‰ƒCƒU
+		// ã‚¤ãƒ‹ã‚·ãƒ£ãƒ©ã‚¤ã‚¶
 		
 		if (objSlideBar !== void) {
 			return;
@@ -55,7 +55,7 @@ class MBHistoryScrollPane extends MBComponentLayer
 	
 	function initPegPosition(num)
 	{
-		// ‚Â‚Ü‚Ý‚ÌˆÊ’u‚Æ‚©‚ð‰Šú‰»
+		// ã¤ã¾ã¿ã®ä½ç½®ã¨ã‹ã‚’åˆæœŸåŒ–
 		
 		objSlidePeg.intMaxStartLine = num;
 		objSlidePeg.top             = intMaxPegTop;
@@ -65,7 +65,7 @@ class MBHistoryScrollPane extends MBComponentLayer
 	
 	function setPegPositionByLine(num)
 	{
-		// ƒXƒNƒ[ƒ‹‚µ‚½‚Æ‚«‚É‚Â‚Ü‚Ý‚ÌˆÊ’u‚ð•Ï‚¦‚é
+		// ã‚¹ã‚¯ãƒ­ãƒ¼ãƒ«ã—ãŸã¨ãã«ã¤ã¾ã¿ã®ä½ç½®ã‚’å¤‰ãˆã‚‹
 		
 		objSlidePeg.top = Math.round(
 			intMaxPegTop * (num / objSlidePeg.intMaxStartLine)
@@ -76,7 +76,7 @@ class MBHistoryScrollPane extends MBComponentLayer
 	
 	function scrollByBarClick(num, updatestate)
 	{
-		// ƒo[‚ÌƒNƒŠƒbƒN‚Å•\Ž¦‚ð•Ï‚¦‚é
+		// ãƒãƒ¼ã®ã‚¯ãƒªãƒƒã‚¯ã§è¡¨ç¤ºã‚’å¤‰ãˆã‚‹
 		
 		if (num > intMaxPegTop) {
 			num = intMaxPegTop;
