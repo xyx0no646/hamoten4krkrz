@@ -28,7 +28,7 @@ var MBFilePath = %[];
 
 function addPathToMBPath(name, path)
 {
-	path = "%s%s".sprintf(System.exePath, path);
+	path = "%s%s".sprintf(System.exePath+"/data/", path);
 	MBFilePath[name] = "%s/".sprintf(path);
 }
 
