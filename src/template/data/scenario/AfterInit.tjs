@@ -29,10 +29,10 @@ var MBFilePath = %[];
 function addPathToMBPath(name, path)
 {
 	if (!Storages.isExistentStorage(System.exePath+"data.xp3")) {
-		path = "%s%s".sprintf(System.exePath+"data.xp3>", path);
+		path = "%s%s".sprintf(System.exePath+"data", path);
 	}
 	else {
-		path = "%s%s".sprintf(System.exePath+"data", path);
+		path = "%s%s".sprintf(System.exePath+"data.xp3>", path);
 	}
 	dm("`%s'を検索中⭐...".sprintf(path));
 	MBFilePath[name] = "%s/".sprintf(path);
