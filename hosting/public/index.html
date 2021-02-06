@@ -3,6 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="manifest" id="krkrsdl2-web-manifest" />
+    <script src="./swloader.js" async></script>
     <title>Kirikiri SDL2</title>
     <style>
       body {
@@ -675,7 +677,7 @@ function intArrayToString(array) {
               }
 
               var xhr = new XMLHttpRequest();
-              xhr.open('GET', url + ((/\?/).test(url) ? "&" : "?") + (new Date()).getTime(), true);
+              xhr.open('GET', url, true);
               xhr.responseType = 'arraybuffer';
               xhr.onprogress = function(event) {
                   var size = -1;
