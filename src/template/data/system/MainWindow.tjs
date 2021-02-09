@@ -1854,6 +1854,12 @@ class KAGWindow extends Window
 					*/
 					try
 					{
+						var old_fn = fn;
+						if (System.platformName == "Emscripten") {
+							global.savedata_tmp = %[];
+							fn = "var://./savedata_tmp/savedata";
+						}
+
 						// サムネイルを保存
 						tmp.saveLayerImage(fn, "bmp" + thumbnailDepth);
 
@@ -1861,6 +1867,11 @@ class KAGWindow extends Window
 						var mode = saveDataMode;
 						mode += "o" + size.size; // モード文字列に 書き込みオフセットを指定
 						(Dictionary.saveStruct incontextof data)(fn, mode);
+
+						if (System.platformName == "Emscripten") {
+							Storages.exportFile(fn, old_fn);
+							delete global.savedata_tmp;
+						}
 					}
 					catch(e)
 					{
